@@ -9,64 +9,33 @@
 /* Begin PBXBuildFile section */
 		50B7934E27C96B9500C38F42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7934D27C96B9500C38F42 /* AppDelegate.swift */; };
 		50B7935027C96B9500C38F42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7934F27C96B9500C38F42 /* SceneDelegate.swift */; };
-		50B7935227C96B9500C38F42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7935127C96B9500C38F42 /* ViewController.swift */; };
-		50B7935527C96B9500C38F42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B7935327C96B9500C38F42 /* Main.storyboard */; };
+		50B7935227C96B9500C38F42 /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7935127C96B9500C38F42 /* ProductsListViewController.swift */; };
 		50B7935727C96B9700C38F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B7935627C96B9700C38F42 /* Assets.xcassets */; };
 		50B7935A27C96B9700C38F42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B7935827C96B9700C38F42 /* LaunchScreen.storyboard */; };
-		50B7936527C96B9700C38F42 /* DesafioDigioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7936427C96B9700C38F42 /* DesafioDigioTests.swift */; };
-		50B7936F27C96B9700C38F42 /* DesafioDigioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7936E27C96B9700C38F42 /* DesafioDigioUITests.swift */; };
-		50B7937127C96B9700C38F42 /* DesafioDigioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7937027C96B9700C38F42 /* DesafioDigioUITestsLaunchTests.swift */; };
+		50B7938627C96FA000C38F42 /* DGErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7938327C96FA000C38F42 /* DGErrors.swift */; };
+		50B7938727C96FA000C38F42 /* ApiURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7938427C96FA000C38F42 /* ApiURL.swift */; };
+		50B7938827C96FA000C38F42 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7938527C96FA000C38F42 /* NetworkManager.swift */; };
+		50B7938A27C9722700C38F42 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7938927C9722700C38F42 /* ProductsService.swift */; };
+		50B7938C27C972D500C38F42 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7938B27C972D500C38F42 /* Products.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		50B7936127C96B9700C38F42 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 50B7934227C96B9500C38F42 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 50B7934927C96B9500C38F42;
-			remoteInfo = DesafioDigio;
-		};
-		50B7936B27C96B9700C38F42 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 50B7934227C96B9500C38F42 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 50B7934927C96B9500C38F42;
-			remoteInfo = DesafioDigio;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		50B7934A27C96B9500C38F42 /* DesafioDigio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioDigio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B7934D27C96B9500C38F42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50B7934F27C96B9500C38F42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		50B7935127C96B9500C38F42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		50B7935427C96B9500C38F42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		50B7935127C96B9500C38F42 /* ProductsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListViewController.swift; sourceTree = "<group>"; };
 		50B7935627C96B9700C38F42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50B7935927C96B9700C38F42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50B7935B27C96B9700C38F42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		50B7936027C96B9700C38F42 /* DesafioDigioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioDigioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50B7936427C96B9700C38F42 /* DesafioDigioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioDigioTests.swift; sourceTree = "<group>"; };
-		50B7936A27C96B9700C38F42 /* DesafioDigioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioDigioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50B7936E27C96B9700C38F42 /* DesafioDigioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioDigioUITests.swift; sourceTree = "<group>"; };
-		50B7937027C96B9700C38F42 /* DesafioDigioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioDigioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		50B7938327C96FA000C38F42 /* DGErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DGErrors.swift; sourceTree = "<group>"; };
+		50B7938427C96FA000C38F42 /* ApiURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiURL.swift; sourceTree = "<group>"; };
+		50B7938527C96FA000C38F42 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		50B7938927C9722700C38F42 /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
+		50B7938B27C972D500C38F42 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		50B7934727C96B9500C38F42 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50B7935D27C96B9700C38F42 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50B7936727C96B9700C38F42 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -80,8 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				50B7934C27C96B9500C38F42 /* DesafioDigio */,
-				50B7936327C96B9700C38F42 /* DesafioDigioTests */,
-				50B7936D27C96B9700C38F42 /* DesafioDigioUITests */,
 				50B7934B27C96B9500C38F42 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,8 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				50B7934A27C96B9500C38F42 /* DesafioDigio.app */,
-				50B7936027C96B9700C38F42 /* DesafioDigioTests.xctest */,
-				50B7936A27C96B9700C38F42 /* DesafioDigioUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,8 +66,7 @@
 			children = (
 				50B7934D27C96B9500C38F42 /* AppDelegate.swift */,
 				50B7934F27C96B9500C38F42 /* SceneDelegate.swift */,
-				50B7935127C96B9500C38F42 /* ViewController.swift */,
-				50B7935327C96B9500C38F42 /* Main.storyboard */,
+				50B7937D27C96E6600C38F42 /* ProductsList */,
 				50B7935627C96B9700C38F42 /* Assets.xcassets */,
 				50B7935827C96B9700C38F42 /* LaunchScreen.storyboard */,
 				50B7935B27C96B9700C38F42 /* Info.plist */,
@@ -110,21 +74,57 @@
 			path = DesafioDigio;
 			sourceTree = "<group>";
 		};
-		50B7936327C96B9700C38F42 /* DesafioDigioTests */ = {
+		50B7937D27C96E6600C38F42 /* ProductsList */ = {
 			isa = PBXGroup;
 			children = (
-				50B7936427C96B9700C38F42 /* DesafioDigioTests.swift */,
+				50B7938227C96F1600C38F42 /* Networking */,
+				50B7938127C96E8000C38F42 /* Services */,
+				50B7938027C96E7A00C38F42 /* Models */,
+				50B7937F27C96E7600C38F42 /* Views */,
+				50B7937E27C96E7200C38F42 /* ViewModels */,
 			);
-			path = DesafioDigioTests;
+			path = ProductsList;
 			sourceTree = "<group>";
 		};
-		50B7936D27C96B9700C38F42 /* DesafioDigioUITests */ = {
+		50B7937E27C96E7200C38F42 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				50B7936E27C96B9700C38F42 /* DesafioDigioUITests.swift */,
-				50B7937027C96B9700C38F42 /* DesafioDigioUITestsLaunchTests.swift */,
 			);
-			path = DesafioDigioUITests;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		50B7937F27C96E7600C38F42 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50B7935127C96B9500C38F42 /* ProductsListViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		50B7938027C96E7A00C38F42 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50B7938B27C972D500C38F42 /* Products.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50B7938127C96E8000C38F42 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				50B7938927C9722700C38F42 /* ProductsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		50B7938227C96F1600C38F42 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				50B7938427C96FA000C38F42 /* ApiURL.swift */,
+				50B7938527C96FA000C38F42 /* NetworkManager.swift */,
+				50B7938327C96FA000C38F42 /* DGErrors.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,42 +147,6 @@
 			productReference = 50B7934A27C96B9500C38F42 /* DesafioDigio.app */;
 			productType = "com.apple.product-type.application";
 		};
-		50B7935F27C96B9700C38F42 /* DesafioDigioTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 50B7937727C96B9700C38F42 /* Build configuration list for PBXNativeTarget "DesafioDigioTests" */;
-			buildPhases = (
-				50B7935C27C96B9700C38F42 /* Sources */,
-				50B7935D27C96B9700C38F42 /* Frameworks */,
-				50B7935E27C96B9700C38F42 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				50B7936227C96B9700C38F42 /* PBXTargetDependency */,
-			);
-			name = DesafioDigioTests;
-			productName = DesafioDigioTests;
-			productReference = 50B7936027C96B9700C38F42 /* DesafioDigioTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		50B7936927C96B9700C38F42 /* DesafioDigioUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 50B7937A27C96B9700C38F42 /* Build configuration list for PBXNativeTarget "DesafioDigioUITests" */;
-			buildPhases = (
-				50B7936627C96B9700C38F42 /* Sources */,
-				50B7936727C96B9700C38F42 /* Frameworks */,
-				50B7936827C96B9700C38F42 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				50B7936C27C96B9700C38F42 /* PBXTargetDependency */,
-			);
-			name = DesafioDigioUITests;
-			productName = DesafioDigioUITests;
-			productReference = 50B7936A27C96B9700C38F42 /* DesafioDigioUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -195,14 +159,6 @@
 				TargetAttributes = {
 					50B7934927C96B9500C38F42 = {
 						CreatedOnToolsVersion = 13.2.1;
-					};
-					50B7935F27C96B9700C38F42 = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 50B7934927C96B9500C38F42;
-					};
-					50B7936927C96B9700C38F42 = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 50B7934927C96B9500C38F42;
 					};
 				};
 			};
@@ -220,8 +176,6 @@
 			projectRoot = "";
 			targets = (
 				50B7934927C96B9500C38F42 /* DesafioDigio */,
-				50B7935F27C96B9700C38F42 /* DesafioDigioTests */,
-				50B7936927C96B9700C38F42 /* DesafioDigioUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -233,21 +187,6 @@
 			files = (
 				50B7935A27C96B9700C38F42 /* LaunchScreen.storyboard in Resources */,
 				50B7935727C96B9700C38F42 /* Assets.xcassets in Resources */,
-				50B7935527C96B9500C38F42 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50B7935E27C96B9700C38F42 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50B7936827C96B9700C38F42 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,53 +197,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50B7935227C96B9500C38F42 /* ViewController.swift in Sources */,
+				50B7938827C96FA000C38F42 /* NetworkManager.swift in Sources */,
+				50B7938727C96FA000C38F42 /* ApiURL.swift in Sources */,
+				50B7938A27C9722700C38F42 /* ProductsService.swift in Sources */,
+				50B7935227C96B9500C38F42 /* ProductsListViewController.swift in Sources */,
 				50B7934E27C96B9500C38F42 /* AppDelegate.swift in Sources */,
+				50B7938C27C972D500C38F42 /* Products.swift in Sources */,
+				50B7938627C96FA000C38F42 /* DGErrors.swift in Sources */,
 				50B7935027C96B9500C38F42 /* SceneDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50B7935C27C96B9700C38F42 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				50B7936527C96B9700C38F42 /* DesafioDigioTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		50B7936627C96B9700C38F42 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				50B7936F27C96B9700C38F42 /* DesafioDigioUITests.swift in Sources */,
-				50B7937127C96B9700C38F42 /* DesafioDigioUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		50B7936227C96B9700C38F42 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 50B7934927C96B9500C38F42 /* DesafioDigio */;
-			targetProxy = 50B7936127C96B9700C38F42 /* PBXContainerItemProxy */;
-		};
-		50B7936C27C96B9700C38F42 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 50B7934927C96B9500C38F42 /* DesafioDigio */;
-			targetProxy = 50B7936B27C96B9700C38F42 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		50B7935327C96B9500C38F42 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				50B7935427C96B9500C38F42 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		50B7935827C96B9700C38F42 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,7 +350,7 @@
 				INFOPLIST_FILE = DesafioDigio/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -456,7 +362,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -472,7 +378,7 @@
 				INFOPLIST_FILE = DesafioDigio/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -484,83 +390,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		50B7937827C96B9700C38F42 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TK5Y26D53T;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = EvertonCarneiro.DesafioDigioTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesafioDigio.app/DesafioDigio";
-			};
-			name = Debug;
-		};
-		50B7937927C96B9700C38F42 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TK5Y26D53T;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = EvertonCarneiro.DesafioDigioTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesafioDigio.app/DesafioDigio";
-			};
-			name = Release;
-		};
-		50B7937B27C96B9700C38F42 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TK5Y26D53T;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = EvertonCarneiro.DesafioDigioUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DesafioDigio;
-			};
-			name = Debug;
-		};
-		50B7937C27C96B9700C38F42 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TK5Y26D53T;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = EvertonCarneiro.DesafioDigioUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DesafioDigio;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -581,24 +411,6 @@
 			buildConfigurations = (
 				50B7937527C96B9700C38F42 /* Debug */,
 				50B7937627C96B9700C38F42 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		50B7937727C96B9700C38F42 /* Build configuration list for PBXNativeTarget "DesafioDigioTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				50B7937827C96B9700C38F42 /* Debug */,
-				50B7937927C96B9700C38F42 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		50B7937A27C96B9700C38F42 /* Build configuration list for PBXNativeTarget "DesafioDigioUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				50B7937B27C96B9700C38F42 /* Debug */,
-				50B7937C27C96B9700C38F42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
