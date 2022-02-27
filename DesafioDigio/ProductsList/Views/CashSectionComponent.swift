@@ -75,7 +75,7 @@ class CashSectionComponent: UIView {
     }
     
     private func setupMutableString(title: String) -> NSMutableAttributedString {
-        let mutableString = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: .bold)])
+        let mutableString = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18, weight: .bold)])
         mutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "digioBlue")!, range: NSRange(location: 0, length:5))
         return mutableString
     }

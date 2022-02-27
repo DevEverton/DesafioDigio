@@ -21,7 +21,6 @@ class ProductsListViewController: UIViewController {
     
     lazy var mainStack: UIStackView = {
         let stackview = UIStackView()
-//        stackview.backgroundColor = .green
         stackview.axis = .vertical
         stackview.distribution = .fill
         stackview.spacing = 16
@@ -36,7 +35,7 @@ class ProductsListViewController: UIViewController {
         label.numberOfLines = 0
         label.sizeToFit()
         label.textColor = UIColor.black
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -108,22 +107,17 @@ class ProductsListViewController: UIViewController {
         
         scrollView.addSubview(activity)
         
-        [titleLabel, spotLightScroller].forEach { mainStack.addArrangedSubview($0) }
-        
-        cashSection.translatesAutoresizingMaskIntoConstraints = false
+        [titleLabel,
+         spotLightScroller,
+         cashSection].forEach { mainStack.addArrangedSubview($0) }
         
         NSLayoutConstraint.activate([
             activity.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            activity.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
-//            titleLabel.topAnchor.constraint(equalTo: mainStack.topAnchor, constant: 16),
-//            titleLabel.leadingAnchor.constraint(equalTo: mainStack.leadingAnchor, constant: 16)
-            
-//            cashSection.topAnchor.constraint(equalTo: spotLightScroller.topAnchor, constant: 200)
-//            cashSection.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
-//            cashSection.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)
+            activity.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
+            cashSection.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16)
         ])
         
-        mainStack.setCustomSpacing(24, after: titleLabel)
+        mainStack.setCustomSpacing(40, after: titleLabel)
         mainStack.setCustomSpacing(24, after: spotLightScroller)
         scrollView.pinToEdges(of: view)
         mainStack.pinToEdges(of: scrollView, withSpacing: 16)
