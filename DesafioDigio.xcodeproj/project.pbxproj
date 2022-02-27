@@ -21,6 +21,7 @@
 		50FDBA9927CBACDA00DFD554 /* CashSectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDBA9827CBACDA00DFD554 /* CashSectionComponent.swift */; };
 		50FDBA9C27CC05F700DFD554 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDBA9B27CC05F700DFD554 /* UIView+Extensions.swift */; };
 		50FDBA9E27CC0ACE00DFD554 /* SpotlightScrollerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDBA9D27CC0ACE00DFD554 /* SpotlightScrollerComponent.swift */; };
+		50FDBAA027CC21ED00DFD554 /* ProductsScrollerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDBA9F27CC21ED00DFD554 /* ProductsScrollerComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		50FDBA9827CBACDA00DFD554 /* CashSectionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashSectionComponent.swift; sourceTree = "<group>"; };
 		50FDBA9B27CC05F700DFD554 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		50FDBA9D27CC0ACE00DFD554 /* SpotlightScrollerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightScrollerComponent.swift; sourceTree = "<group>"; };
+		50FDBA9F27CC21ED00DFD554 /* ProductsScrollerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsScrollerComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				50B7935127C96B9500C38F42 /* ProductsListViewController.swift */,
 				50FDBA9827CBACDA00DFD554 /* CashSectionComponent.swift */,
 				50FDBA9D27CC0ACE00DFD554 /* SpotlightScrollerComponent.swift */,
+				50FDBA9F27CC21ED00DFD554 /* ProductsScrollerComponent.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				50B7938C27C972D500C38F42 /* Products.swift in Sources */,
 				50B7938627C96FA000C38F42 /* DGErrors.swift in Sources */,
 				50B7935027C96B9500C38F42 /* SceneDelegate.swift in Sources */,
+				50FDBAA027CC21ED00DFD554 /* ProductsScrollerComponent.swift in Sources */,
 				50FDBA9C27CC05F700DFD554 /* UIView+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
