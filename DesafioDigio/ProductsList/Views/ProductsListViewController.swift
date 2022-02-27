@@ -40,6 +40,7 @@ class ProductsListViewController: UIViewController {
     
     
     var viewModel: PeoductsListViewModel!
+
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -72,7 +73,20 @@ class ProductsListViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success:
-                    self.cashSection.model = .init(title: self.viewModel.allProducts!.cash.title, bannerImage: "")
+                    
+
+                    if let imageUrl = URL(string: self.viewModel.cash.bannerURL) {
+                        DispatchQueue.global(qos: .background).async {
+                            if let data = try? Data(contentsOf: imageUrl) {
+                                if let image = UIImage(data: data) {
+                                    DispatchQueue.main.async {
+                                        self.cashSection.model = .init(title: self.viewModel.cash.title, bannerImage: image)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
                 case .failure(let error):
                     let alert = UIAlertController(title: "Ops, ocorreu um erro", message: error.localizedDescription, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -80,16 +94,34 @@ class ProductsListViewController: UIViewController {
                 }
             }
             
-            
         }
+    }
+    
+    private func loadImage(imageUrl: String) -> UIImage {
+        guard let imageURL = URL(string: imageUrl) else { return UIImage() }
+        var resultImage = UIImage()
+
+        DispatchQueue.global(qos: .background).async {
+            if let data = try? Data(contentsOf: imageURL) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        resultImage = image
+                    }
+                }
+            }
+        }
+        return resultImage
     }
     
     func setupViews() {
         setupScrollView()
+        setupCashSection()
     }
     
     func setupCashSection() {
-        
+        NSLayoutConstraint.activate([
+            cashSection.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16)
+        ])
     }
     
     func setupScrollView() {
@@ -105,8 +137,9 @@ class ProductsListViewController: UIViewController {
             activity.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
             titleLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+            cashSection.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
             cashSection.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
-            cashSection.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16)
+            cashSection.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16)
         ])
         scrollView.pinToEdges(of: view)
     }
