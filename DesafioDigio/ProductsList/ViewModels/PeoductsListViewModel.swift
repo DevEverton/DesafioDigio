@@ -11,6 +11,7 @@ class PeoductsListViewModel {
     
     let service: ProductsServiceProtocol
     private(set) var allProducts: AllProducts? = nil
+    let title = "Olá, Everton"
     
     init(service: ProductsServiceProtocol = ProductsService()) {
         self.service = service

@@ -17,7 +17,14 @@ struct Product: Decodable {
     let description: String
 }
 
+struct Cash: Decodable {
+    let title: String
+    let bannerURL: String
+    let description: String
+}
+
 struct AllProducts: Decodable {
     let spotlight: [SpotLightProduct]
     let products: [Product]
+    let cash: Cash
 }
