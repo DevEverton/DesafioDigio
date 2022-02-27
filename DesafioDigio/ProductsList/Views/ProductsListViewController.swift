@@ -9,6 +9,7 @@ import UIKit
 
 class ProductsListViewController: UIViewController {
     
+    var spotLightScroller = SpotlightScrollerComponent()
     var cashSection = CashSectionComponent()
     
     lazy var scrollView: UIScrollView = {
@@ -20,9 +21,10 @@ class ProductsListViewController: UIViewController {
     
     lazy var mainStack: UIStackView = {
         let stackview = UIStackView()
+//        stackview.backgroundColor = .green
         stackview.axis = .vertical
         stackview.distribution = .fill
-        stackview.spacing = 12
+        stackview.spacing = 16
         stackview.translatesAutoresizingMaskIntoConstraints = false
         return stackview
     }()
@@ -82,6 +84,8 @@ class ProductsListViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success:
+                    self.spotLightScroller.model = .init(products: self.viewModel.spotlightProducts)
+                    
                     self.cashSection.model = .init(title: self.viewModel.cash.title, bannerImageUrl: self.viewModel.cash.bannerURL)
                     
                 case .failure(let error):
@@ -96,13 +100,6 @@ class ProductsListViewController: UIViewController {
     
     func setupViews() {
         setupScrollView()
-        setupCashSection()
-    }
-    
-    func setupCashSection() {
-        NSLayoutConstraint.activate([
-            cashSection.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16)
-        ])
     }
     
     func setupScrollView() {
@@ -110,63 +107,26 @@ class ProductsListViewController: UIViewController {
         scrollView.addSubview(mainStack)
         
         scrollView.addSubview(activity)
-        mainStack.addSubview(titleLabel)
-        mainStack.addSubview(cashSection)
+        
+        [titleLabel, spotLightScroller].forEach { mainStack.addArrangedSubview($0) }
         
         cashSection.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             activity.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            activity.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
-            titleLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
-            titleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
-            cashSection.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-            cashSection.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
-            cashSection.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)
-        ])
-        scrollView.pinToEdges(of: view)
-        mainStack.pinToEdges(of: scrollView)
-    }
-    
-    func setUpScrollViewContentSize() {
-        let contentRect: CGRect = scrollView.subviews.reduce(into: .zero) { rect, view in
-            rect = rect.union(view.frame)
-        }
-        scrollView.contentSize = contentRect.size
-    }
-    
-}
-
-extension UIView {
-    func pinToEdges(of view: UIView) {
-        NSLayoutConstraint.activate([
-            self.topAnchor.constraint(equalTo: view.topAnchor),
-            self.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            self.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            self.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            self.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            self.widthAnchor.constraint(equalTo: view.widthAnchor)
-        ])
-    }
-}
-
-extension UIImageView {
-    
-    func setImage(withURL urlString: String, placeholderImage: UIImage) {
-        image = placeholderImage
-        
-        let url = URL.init(string: urlString)
-        let request = URLRequest.init(url: url!)
-        let session = URLSession.shared
-
-        let datatask = session.dataTask(with: request) { (data, response, error) in
-            if let imgData = data {
-                DispatchQueue.main.async { [weak self] in
-                    self?.image = UIImage.init(data: imgData)
-                }
-            }
+            activity.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
+//            titleLabel.topAnchor.constraint(equalTo: mainStack.topAnchor, constant: 16),
+//            titleLabel.leadingAnchor.constraint(equalTo: mainStack.leadingAnchor, constant: 16)
             
-        }
-        datatask.resume()
+//            cashSection.topAnchor.constraint(equalTo: spotLightScroller.topAnchor, constant: 200)
+//            cashSection.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+//            cashSection.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)
+        ])
+        
+        mainStack.setCustomSpacing(24, after: titleLabel)
+        mainStack.setCustomSpacing(24, after: spotLightScroller)
+        scrollView.pinToEdges(of: view)
+        mainStack.pinToEdges(of: scrollView, withSpacing: 16)
     }
+    
 }
