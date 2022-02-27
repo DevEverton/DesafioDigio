@@ -18,6 +18,7 @@
 		50B7938A27C9722700C38F42 /* ProductsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7938927C9722700C38F42 /* ProductsService.swift */; };
 		50B7938C27C972D500C38F42 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7938B27C972D500C38F42 /* Products.swift */; };
 		50B7938E27CB9CD300C38F42 /* PeoductsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7938D27CB9CD300C38F42 /* PeoductsListViewModel.swift */; };
+		50FDBA9927CBACDA00DFD554 /* CashSectionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FDBA9827CBACDA00DFD554 /* CashSectionComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		50B7938927C9722700C38F42 /* ProductsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsService.swift; sourceTree = "<group>"; };
 		50B7938B27C972D500C38F42 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		50B7938D27CB9CD300C38F42 /* PeoductsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeoductsListViewModel.swift; sourceTree = "<group>"; };
+		50FDBA9827CBACDA00DFD554 /* CashSectionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashSectionComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				50B7938D27CB9CD300C38F42 /* PeoductsListViewModel.swift */,
+				50FDBA9827CBACDA00DFD554 /* CashSectionComponent.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				50B7938E27CB9CD300C38F42 /* PeoductsListViewModel.swift in Sources */,
 				50B7938727C96FA000C38F42 /* ApiURL.swift in Sources */,
 				50B7938A27C9722700C38F42 /* ProductsService.swift in Sources */,
+				50FDBA9927CBACDA00DFD554 /* CashSectionComponent.swift in Sources */,
 				50B7935227C96B9500C38F42 /* ProductsListViewController.swift in Sources */,
 				50B7934E27C96B9500C38F42 /* AppDelegate.swift in Sources */,
 				50B7938C27C972D500C38F42 /* Products.swift in Sources */,

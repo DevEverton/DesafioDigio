@@ -9,9 +9,24 @@ import UIKit
 
 class ProductsListViewController: UIViewController {
     
+//    lazy var cashSection: UILabel = {
+//        let label = UILabel()
+//
+//        label.textColor = UIColor.systemGray
+//
+//        let title = "digio Cash"
+//        var mutableString = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 24, weight: .bold)])
+//        mutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "digioBlue")!, range: NSRange(location:0,length:5))
+//
+//        label.attributedText = mutableString
+//        return label
+//    }()
+    
+    var cashSection = CashSectionComponent()
+    
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .systemGray5
+        scrollView.backgroundColor = .white
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
@@ -31,6 +46,7 @@ class ProductsListViewController: UIViewController {
     lazy var activity: UIActivityIndicatorView = {
         let activity = UIActivityIndicatorView()
         activity.hidesWhenStopped = true
+        activity.translatesAutoresizingMaskIntoConstraints = false
         activity.startAnimating()
         return activity
     }()
@@ -64,12 +80,12 @@ class ProductsListViewController: UIViewController {
     func loadData() {
         viewModel.loadProducts { [weak self] (result) in
             guard let self = self else { return }
-            
+            self.activity.stopAnimating()
+
             DispatchQueue.main.async {
                 switch result {
-                    
                 case .success:
-                    print("Success with data: \(self.viewModel.allProducts)")
+                    print("Success with data:")
                 case .failure(let error):
                     let alert = UIAlertController(title: "Ops, ocorreu um erro", message: error.localizedDescription, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -83,24 +99,31 @@ class ProductsListViewController: UIViewController {
     
     func setupViews() {
         setupScrollView()
-        setupTitle()
+    }
+    
+    func setupCashSection() {
+        
     }
     
     func setupScrollView() {
         view.addSubview(scrollView)
-        
-        scrollView.pinToEdges(of: view)
-
-    }
-    
-    func setupTitle() {
+        scrollView.addSubview(activity)
         scrollView.addSubview(titleLabel)
+        scrollView.addSubview(cashSection)
+        
+        cashSection.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16)
+            activity.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            activity.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor),
+            titleLabel.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
+            titleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+            cashSection.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+            cashSection.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16)
         ])
+        scrollView.pinToEdges(of: view)
     }
+    
 }
 
 
