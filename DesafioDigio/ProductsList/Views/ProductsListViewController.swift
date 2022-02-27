@@ -8,13 +8,13 @@
 import UIKit
 
 class ProductsListViewController: UIViewController {
-    var service: ProductsService!
+    var viewModel: PeoductsListViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        service = ProductsService()
-        service.fetch { result in
-            print("Fetch result: \(result)")
+        viewModel = PeoductsListViewModel()
+        viewModel.loadProducts { result in
+            print("loaded list: \(self.viewModel.allProducts)")
         }
     }
 }
