@@ -26,52 +26,56 @@ class CashSectionComponent: UIView {
         setupView()
     }
     
-    lazy var titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.systemGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    lazy var bannerImageView: UIImageView = {
+    let bannerImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleToFill
         imageView.layer.cornerRadius = 12
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        imageView.clipsToBounds = true
         return imageView
     }()
     
     
-    lazy var stack: UIStackView = {
+    let stack: UIStackView = {
         let stackview = UIStackView()
-        stackview.backgroundColor = .red
         stackview.axis = .vertical
         stackview.distribution = .fill
-        stackview.spacing = 12
+        stackview.spacing = 8
         stackview.translatesAutoresizingMaskIntoConstraints = false
         return stackview
     }()
     
     struct CashSectionModel {
         let title: String
-        let bannerImage: UIImage
+        let bannerImageUrl: String
     }
     
     private func setupView() {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(stack)
-        [titleLabel, bannerImageView].forEach { stack.addArrangedSubview($0) }
+        [titleLabel,bannerImageView].forEach { stack.addArrangedSubview($0) }
+        NSLayoutConstraint.activate([
+            stack.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            stack.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+        ])
     }
     
     func bind() {
         guard let model = model else { return }
         titleLabel.attributedText = setupMutableString(title: model.title)
-        bannerImageView.image = model.bannerImage
+        bannerImageView.setImage(withURL: model.bannerImageUrl, placeholderImage: UIImage())
     }
     
     private func setupMutableString(title: String) -> NSMutableAttributedString {
-        let mutableString = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 24, weight: .bold)])
+        let mutableString = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: .bold)])
         mutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "digioBlue")!, range: NSRange(location: 0, length:5))
         return mutableString
     }

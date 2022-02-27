@@ -12,10 +12,19 @@ class ProductsListViewController: UIViewController {
     var cashSection = CashSectionComponent()
     
     lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
+        let scrollView = UIScrollView(frame: .init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         scrollView.backgroundColor = .white
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
+    }()
+    
+    lazy var mainStack: UIStackView = {
+        let stackview = UIStackView()
+        stackview.axis = .vertical
+        stackview.distribution = .fill
+        stackview.spacing = 12
+        stackview.translatesAutoresizingMaskIntoConstraints = false
+        return stackview
     }()
     
     
@@ -73,19 +82,7 @@ class ProductsListViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success:
-                    
-
-                    if let imageUrl = URL(string: self.viewModel.cash.bannerURL) {
-                        DispatchQueue.global(qos: .background).async {
-                            if let data = try? Data(contentsOf: imageUrl) {
-                                if let image = UIImage(data: data) {
-                                    DispatchQueue.main.async {
-                                        self.cashSection.model = .init(title: self.viewModel.cash.title, bannerImage: image)
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    self.cashSection.model = .init(title: self.viewModel.cash.title, bannerImageUrl: self.viewModel.cash.bannerURL)
                     
                 case .failure(let error):
                     let alert = UIAlertController(title: "Ops, ocorreu um erro", message: error.localizedDescription, preferredStyle: .alert)
@@ -95,22 +92,6 @@ class ProductsListViewController: UIViewController {
             }
             
         }
-    }
-    
-    private func loadImage(imageUrl: String) -> UIImage {
-        guard let imageURL = URL(string: imageUrl) else { return UIImage() }
-        var resultImage = UIImage()
-
-        DispatchQueue.global(qos: .background).async {
-            if let data = try? Data(contentsOf: imageURL) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        resultImage = image
-                    }
-                }
-            }
-        }
-        return resultImage
     }
     
     func setupViews() {
@@ -126,9 +107,11 @@ class ProductsListViewController: UIViewController {
     
     func setupScrollView() {
         view.addSubview(scrollView)
+        scrollView.addSubview(mainStack)
+        
         scrollView.addSubview(activity)
-        scrollView.addSubview(titleLabel)
-        scrollView.addSubview(cashSection)
+        mainStack.addSubview(titleLabel)
+        mainStack.addSubview(cashSection)
         
         cashSection.translatesAutoresizingMaskIntoConstraints = false
         
@@ -139,15 +122,22 @@ class ProductsListViewController: UIViewController {
             titleLabel.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
             cashSection.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
             cashSection.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
-            cashSection.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16)
+            cashSection.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor)
         ])
         scrollView.pinToEdges(of: view)
+        mainStack.pinToEdges(of: scrollView)
+    }
+    
+    func setUpScrollViewContentSize() {
+        let contentRect: CGRect = scrollView.subviews.reduce(into: .zero) { rect, view in
+            rect = rect.union(view.frame)
+        }
+        scrollView.contentSize = contentRect.size
     }
     
 }
 
-
-extension UIScrollView {
+extension UIView {
     func pinToEdges(of view: UIView) {
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(equalTo: view.topAnchor),
@@ -157,5 +147,26 @@ extension UIScrollView {
             self.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             self.widthAnchor.constraint(equalTo: view.widthAnchor)
         ])
+    }
+}
+
+extension UIImageView {
+    
+    func setImage(withURL urlString: String, placeholderImage: UIImage) {
+        image = placeholderImage
+        
+        let url = URL.init(string: urlString)
+        let request = URLRequest.init(url: url!)
+        let session = URLSession.shared
+
+        let datatask = session.dataTask(with: request) { (data, response, error) in
+            if let imgData = data {
+                DispatchQueue.main.async { [weak self] in
+                    self?.image = UIImage.init(data: imgData)
+                }
+            }
+            
+        }
+        datatask.resume()
     }
 }
