@@ -9,19 +9,6 @@ import UIKit
 
 class ProductsListViewController: UIViewController {
     
-//    lazy var cashSection: UILabel = {
-//        let label = UILabel()
-//
-//        label.textColor = UIColor.systemGray
-//
-//        let title = "digio Cash"
-//        var mutableString = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 24, weight: .bold)])
-//        mutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "digioBlue")!, range: NSRange(location:0,length:5))
-//
-//        label.attributedText = mutableString
-//        return label
-//    }()
-    
     var cashSection = CashSectionComponent()
     
     lazy var scrollView: UIScrollView = {
@@ -85,7 +72,7 @@ class ProductsListViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success:
-                    print("Success with data:")
+                    self.cashSection.model = .init(title: self.viewModel.allProducts!.cash.title, bannerImage: "")
                 case .failure(let error):
                     let alert = UIAlertController(title: "Ops, ocorreu um erro", message: error.localizedDescription, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

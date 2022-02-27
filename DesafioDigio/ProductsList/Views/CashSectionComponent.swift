@@ -16,15 +16,20 @@ class CashSectionComponent: UIView {
         }
     }
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+      }
+      
+      required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupView()
+      }
+    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.systemGray
-        
-        let title = "digio Cash"
-        var mutableString = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 24, weight: .bold)])
-        mutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "digioBlue")!, range: NSRange(location:0,length:5))
-
-        label.attributedText = mutableString
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -37,16 +42,23 @@ class CashSectionComponent: UIView {
     }()
 
     struct CashSectionModel {
+        let title: String
         let bannerImage: String
     }
     
-    func setupLayout() {
+    private func setupView() {
         self.addSubview(stack)
         stack.addSubview(titleLabel)
     }
     
     func bind() {
         guard let model = model else { return }
-        
+        titleLabel.attributedText = setupMutableString(title: model.title)
+    }
+    
+    private func setupMutableString(title: String) -> NSMutableAttributedString {
+        let mutableString = NSMutableAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 24, weight: .bold)])
+        mutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "digioBlue")!, range: NSRange(location: 0, length:5))
+        return mutableString
     }
 }

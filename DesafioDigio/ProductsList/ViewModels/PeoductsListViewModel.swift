@@ -10,7 +10,7 @@ import Foundation
 class PeoductsListViewModel {
     
     let service: ProductsServiceProtocol
-    private(set) var allProducts: AllProducts? = nil
+    private(set) var allProducts: AllProducts!
     let title = "Olá, Everton"
     
     init(service: ProductsServiceProtocol = ProductsService()) {

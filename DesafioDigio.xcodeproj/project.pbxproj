@@ -94,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				50B7938D27CB9CD300C38F42 /* PeoductsListViewModel.swift */,
-				50FDBA9827CBACDA00DFD554 /* CashSectionComponent.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -103,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				50B7935127C96B9500C38F42 /* ProductsListViewController.swift */,
+				50FDBA9827CBACDA00DFD554 /* CashSectionComponent.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
