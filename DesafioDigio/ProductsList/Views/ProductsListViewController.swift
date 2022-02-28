@@ -124,6 +124,8 @@ class ProductsListViewController: UIViewController {
          cashSection,
          productsTitleLabel,
          productsScroller].forEach { mainStack.addArrangedSubview($0) }
+        cashSection.translatesAutoresizingMaskIntoConstraints = false
+        productsScroller.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             activity.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
@@ -133,7 +135,7 @@ class ProductsListViewController: UIViewController {
         
         mainStack.setCustomSpacing(40, after: titleLabel)
         mainStack.setCustomSpacing(24, after: spotLightScroller)
-        mainStack.setCustomSpacing(180, after: cashSection)
+        mainStack.setCustomSpacing(150, after: cashSection)
 
         scrollView.pinToEdges(of: view)
         mainStack.pinToEdges(of: scrollView, withSpacing: 16)
