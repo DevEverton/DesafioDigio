@@ -72,7 +72,7 @@ class ProductsScrollerComponent: UIView {
         let imageView = UIImageView()
         containerView.addSubview(imageView)
        
-        containerView.backgroundColor = .systemGray5
+        containerView.backgroundColor = .gray
         imageView.contentMode = .scaleAspectFit
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
