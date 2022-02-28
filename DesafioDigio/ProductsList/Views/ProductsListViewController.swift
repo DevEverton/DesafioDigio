@@ -24,7 +24,7 @@ class ProductsListViewController: UIViewController {
         let stackview = UIStackView()
         stackview.axis = .vertical
         stackview.distribution = .fill
-        stackview.spacing = 16
+        stackview.spacing = 24
         stackview.translatesAutoresizingMaskIntoConstraints = false
         return stackview
     }()
@@ -124,6 +124,7 @@ class ProductsListViewController: UIViewController {
          cashSection,
          productsTitleLabel,
          productsScroller].forEach { mainStack.addArrangedSubview($0) }
+        
         cashSection.translatesAutoresizingMaskIntoConstraints = false
         productsScroller.translatesAutoresizingMaskIntoConstraints = false
         
@@ -134,8 +135,6 @@ class ProductsListViewController: UIViewController {
         ])
         
         mainStack.setCustomSpacing(40, after: titleLabel)
-        mainStack.setCustomSpacing(24, after: spotLightScroller)
-        mainStack.setCustomSpacing(150, after: cashSection)
 
         scrollView.pinToEdges(of: view)
         mainStack.pinToEdges(of: scrollView, withSpacing: 16)

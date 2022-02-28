@@ -64,7 +64,9 @@ class CashSectionComponent: UIView {
         [titleLabel,bannerImageView].forEach { stack.addArrangedSubview($0) }
         NSLayoutConstraint.activate([
             stack.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            stack.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            stack.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            stack.topAnchor.constraint(equalTo: self.topAnchor),
+            stack.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
     
