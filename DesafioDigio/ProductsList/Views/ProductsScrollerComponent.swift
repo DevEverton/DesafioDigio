@@ -70,10 +70,10 @@ class ProductsScrollerComponent: UIView {
     private func createBannerImage(withUrl url: String) -> UIView {
         let containerView = UIView()
         let imageView = UIImageView()
+        self.addSubview(containerView)
         containerView.addSubview(imageView)
        
-        containerView.backgroundColor = .gray
-        imageView.contentMode = .scaleAspectFit
+        containerView.backgroundColor = .white
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -81,6 +81,8 @@ class ProductsScrollerComponent: UIView {
         NSLayoutConstraint.activate([
             containerView.heightAnchor.constraint(equalToConstant: 120),
             containerView.widthAnchor.constraint(equalToConstant: 120),
+            containerView.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 5),
+            containerView.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -5),
             imageView.heightAnchor.constraint(equalToConstant: 60),
             imageView.widthAnchor.constraint(equalToConstant: 60),
             imageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
@@ -88,10 +90,21 @@ class ProductsScrollerComponent: UIView {
         ])
         
         imageView.setImage(withURL: url, placeholderImage: UIImage())
+        imageView.contentMode = .scaleAspectFit
         containerView.layer.cornerRadius = 12
-        containerView.clipsToBounds = true
+        
+        containerView.addShadowWithRoundedCorners(of: 12)
         
         return containerView
     }
-}
+    
+    func makeRoundedAndShadowed(view: UIView) {
+        view.layer.cornerRadius = 12
+        view.layer.masksToBounds = false
 
+        view.layer.shadowColor = UIColor.darkGray.cgColor
+        view.layer.shadowOffset = CGSize(width: 4, height: 4)
+        view.layer.shadowOpacity = 0.3
+        view.layer.shadowRadius = 5.0
+    }
+}

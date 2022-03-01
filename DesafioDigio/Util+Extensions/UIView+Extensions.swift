@@ -40,3 +40,16 @@ extension UIImageView {
         datatask.resume()
     }
 }
+
+
+extension UIView {
+    func addShadowWithRoundedCorners(of radius: CGFloat) {
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = false
+
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowOffset = CGSize(width: 4, height: 4)
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowRadius = 5.0
+    }
+}

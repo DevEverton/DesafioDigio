@@ -82,3 +82,4 @@ class CashSectionComponent: UIView {
         return mutableString
     }
 }
+
