@@ -47,7 +47,7 @@ class ProductsScrollerComponent: UIView {
     }
     
     private func setupView() {
-        self.addSubview(scrollView)
+        addSubview(scrollView)
         scrollView.pinToEdges(of: self)
         
         NSLayoutConstraint.activate([
@@ -70,7 +70,7 @@ class ProductsScrollerComponent: UIView {
     private func createBannerImage(withUrl url: String) -> UIView {
         let containerView = UIView()
         let imageView = UIImageView()
-        self.addSubview(containerView)
+        addSubview(containerView)
         containerView.addSubview(imageView)
        
         containerView.backgroundColor = .white
@@ -98,13 +98,4 @@ class ProductsScrollerComponent: UIView {
         return containerView
     }
     
-    func makeRoundedAndShadowed(view: UIView) {
-        view.layer.cornerRadius = 12
-        view.layer.masksToBounds = false
-
-        view.layer.shadowColor = UIColor.darkGray.cgColor
-        view.layer.shadowOffset = CGSize(width: 4, height: 4)
-        view.layer.shadowOpacity = 0.3
-        view.layer.shadowRadius = 5.0
-    }
 }

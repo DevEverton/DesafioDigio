@@ -47,7 +47,7 @@ class SpotlightScrollerComponent: UIView {
     }
     
     private func setupView() {
-        self.addSubview(scrollView)
+        addSubview(scrollView)
         scrollView.pinToEdges(of: self)
         
         NSLayoutConstraint.activate([
@@ -64,19 +64,25 @@ class SpotlightScrollerComponent: UIView {
         for product in model.products {
             stackView.addArrangedSubview(createBannerImage(withUrl: product.bannerURL))
         }
+        
     }
     
     private func createBannerImage(withUrl url: String) -> UIImageView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         imageView.layer.cornerRadius = 12
+        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             imageView.heightAnchor.constraint(equalToConstant: 200),
-            imageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32)
+            imageView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 32),
+            stackView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
+
+
         ])
-        imageView.clipsToBounds = true
         imageView.setImage(withURL: url, placeholderImage: UIImage())
+        imageView.addShadowWithRoundedCorners(of: 12)
         return imageView
     }
     

@@ -60,7 +60,7 @@ class CashSectionComponent: UIView {
     
     private func setupView() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(stack)
+        addSubview(stack)
         [titleLabel,bannerImageView].forEach { stack.addArrangedSubview($0) }
         NSLayoutConstraint.activate([
             stack.leadingAnchor.constraint(equalTo: self.leadingAnchor),
