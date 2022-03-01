@@ -16,6 +16,11 @@ class CashSectionComponent: UIView {
         }
     }
     
+    struct CashSectionModel {
+        let title: String
+        let bannerImageUrl: String
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -53,10 +58,6 @@ class CashSectionComponent: UIView {
         return stackview
     }()
     
-    struct CashSectionModel {
-        let title: String
-        let bannerImageUrl: String
-    }
     
     private func setupView() {
         self.translatesAutoresizingMaskIntoConstraints = false
@@ -81,5 +82,6 @@ class CashSectionComponent: UIView {
         mutableString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor(named: "digioBlue")!, range: NSRange(location: 0, length:5))
         return mutableString
     }
+    
 }
 

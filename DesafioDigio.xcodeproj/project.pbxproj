@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		507F181827CEC83B008B8D29 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F181727CEC83B008B8D29 /* DetailViewController.swift */; };
 		50B7934E27C96B9500C38F42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7934D27C96B9500C38F42 /* AppDelegate.swift */; };
 		50B7935227C96B9500C38F42 /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7935127C96B9500C38F42 /* ProductsListViewController.swift */; };
 		50B7935727C96B9700C38F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B7935627C96B9700C38F42 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		507F181727CEC83B008B8D29 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		50B7934A27C96B9500C38F42 /* DesafioDigio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioDigio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B7934D27C96B9500C38F42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50B7935127C96B9500C38F42 /* ProductsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				50FDBA9827CBACDA00DFD554 /* CashSectionComponent.swift */,
 				50FDBA9D27CC0ACE00DFD554 /* SpotlightScrollerComponent.swift */,
 				50FDBA9F27CC21ED00DFD554 /* ProductsScrollerComponent.swift */,
+				507F181727CEC83B008B8D29 /* DetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507F181827CEC83B008B8D29 /* DetailViewController.swift in Sources */,
 				50B7938827C96FA000C38F42 /* NetworkManager.swift in Sources */,
 				50B7938E27CB9CD300C38F42 /* PeoductsListViewModel.swift in Sources */,
 				50B7938727C96FA000C38F42 /* ApiURL.swift in Sources */,

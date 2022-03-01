@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.backgroundColor = .orange
         
         let productsVC = ProductsListViewController()
         let navigationController = UINavigationController(rootViewController: productsVC)

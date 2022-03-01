@@ -73,7 +73,9 @@ class ProductsListViewController: UIViewController {
     override func loadView() {
         let view = UIView()
         view.backgroundColor = .white
-        
+        navigationItem.backButtonTitle = "Produtos"
+        navigationController?.navigationBar.tintColor = .black
+
         self.view = view
     }
     
@@ -111,6 +113,13 @@ class ProductsListViewController: UIViewController {
     
     func setupViews() {
         setupScrollView()
+        setupRouterForCashSection()
+    }
+    
+    func setupRouterForCashSection() {
+        let cashSectionGesture = UITapGestureRecognizer(target: self, action: #selector(handleCashSectionTap))
+        cashSection.addGestureRecognizer(cashSectionGesture)
+        cashSection.isUserInteractionEnabled = true
     }
     
     func setupScrollView() {
@@ -138,6 +147,12 @@ class ProductsListViewController: UIViewController {
 
         scrollView.pinToEdges(of: view)
         mainStack.pinToEdges(of: scrollView, withSpacing: 16)
+    }
+    
+    @objc func handleCashSectionTap(_ sender: UITapGestureRecognizer) {
+        let vc = DetailViewController()
+        vc.model = .init(title: viewModel.cash.title, bannerImage: cashSection.bannerImageView.image, description: viewModel.cash.description)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
