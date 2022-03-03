@@ -33,7 +33,7 @@ class DetailViewController: UIViewController {
     
     let bannerImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .topLeft
         imageView.layer.cornerRadius = 12
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
@@ -49,8 +49,6 @@ class DetailViewController: UIViewController {
         return label
     }()
     
-    
-
     
     lazy var stack: UIStackView = {
         let stackview = UIStackView()

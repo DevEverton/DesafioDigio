@@ -8,7 +8,7 @@
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, NavigationControllerInjected {
 
     var window: UIWindow?
     
@@ -20,9 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let productsVC = ProductsListViewController()
         let navigationController = UINavigationController(rootViewController: productsVC)
         
+        NavigationController.shared = navigationController
 
-        window?.rootViewController = navigationController
+        window?.rootViewController =  NavigationController.shared
         return true
     }
 
 }
+
+
+protocol NavigationControllerInjected {}
+
+class NavigationController {
+    
+    static var shared = UINavigationController()
+}
+
