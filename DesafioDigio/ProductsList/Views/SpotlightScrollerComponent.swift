@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SpotlightScrollerComponent: UIView {
+class SpotlightScrollerComponent: UIView, NavigationControllerInjected {
     typealias Model = CashSectionModel
     
     private var banners = [UIImageView]()
@@ -89,7 +89,7 @@ class SpotlightScrollerComponent: UIView {
             }
         }
         vc.model = .init(title: product.name, bannerImage: banner.image, description: product.description)
-        NavigationController.shared.pushViewController(vc, animated: true)
+        navController.pushViewController(vc, animated: true)
     }
     
     func getDataForDetailView(product: SpotLightProduct) -> SpotLightProduct {

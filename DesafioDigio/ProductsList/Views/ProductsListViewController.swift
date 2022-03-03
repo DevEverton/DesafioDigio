@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductsListViewController: UIViewController {
+class ProductsListViewController: UIViewController, NavigationControllerInjected {
     
     var spotLightScroller = SpotlightScrollerComponent()
     var cashSection = CashSectionComponent()
@@ -83,10 +83,10 @@ class ProductsListViewController: UIViewController {
         super.viewDidLoad()
         viewModel = PeoductsListViewModel()
                 
-        setupViews()
         loadData()
+        setupViews()
     }
-    
+
     func loadData() {
         viewModel.loadProducts { [weak self] (result) in
             guard let self = self else { return }
@@ -152,7 +152,7 @@ class ProductsListViewController: UIViewController {
     @objc func handleCashSectionTap(_ sender: UITapGestureRecognizer) {
         let vc = DetailViewController()
         vc.model = .init(title: viewModel.cash.title, bannerImage: cashSection.bannerImageView.image, description: viewModel.cash.description)
-        navigationController?.pushViewController(vc, animated: true)
+        navController.pushViewController(vc, animated: true)
     }
     
 }

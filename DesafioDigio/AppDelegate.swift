@@ -8,7 +8,7 @@
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, NavigationControllerInjected {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
@@ -31,8 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NavigationControllerInjec
 
 protocol NavigationControllerInjected {}
 
+extension NavigationControllerInjected {
+    var navController: UINavigationController { return NavigationController.shared }
+}
+
 class NavigationController {
-    
+
     static var shared = UINavigationController()
 }
 

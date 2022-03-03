@@ -1,14 +1,14 @@
 //
-//  DetailViewController.swift
+//  ProductDetail.swift
 //  DesafioDigio
 //
-//  Created by Everton Carneiro on 01/03/22.
+//  Created by Everton Carneiro on 02/03/22.
 //
 
+import Foundation
 import UIKit
 
-
-class DetailViewController: UIViewController {
+class ProductDetail: UIViewController {
     typealias Model = DetailsModel
     
     var model: Model? {
@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
     
     struct DetailsModel {
         let title: String
-        let bannerImage: UIImage?
+        let logo: UIView
         let description: String?
     }
     
@@ -31,13 +31,12 @@ class DetailViewController: UIViewController {
         return label
     }()
     
-    let bannerImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .topLeft
-        imageView.layer.cornerRadius = 12
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
-        return imageView
+    var logoView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 12
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
+        return view
     }()
     
     let descriptionLabel: UILabel = {
@@ -46,6 +45,7 @@ class DetailViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 18, weight: .regular)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .natural
         return label
     }()
     
@@ -53,6 +53,15 @@ class DetailViewController: UIViewController {
     lazy var stack: UIStackView = {
         let stackview = UIStackView()
         stackview.axis = .vertical
+        stackview.distribution = .fill
+        stackview.spacing = 12
+        stackview.translatesAutoresizingMaskIntoConstraints = false
+        return stackview
+    }()
+    
+    lazy var horizontalStack: UIStackView = {
+        let stackview = UIStackView()
+        stackview.axis = .horizontal
         stackview.distribution = .fill
         stackview.spacing = 12
         stackview.translatesAutoresizingMaskIntoConstraints = false
@@ -76,22 +85,20 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         setupViews()
     }
     
     func setupViews() {
         view.addSubview(stack)
         stack.addArrangedSubview(titleLabel)
-        [bannerImageView, titleLabel, descriptionLabel].forEach { stack.addArrangedSubview($0) }
+        [logoView, titleLabel, descriptionLabel].forEach { stack.addArrangedSubview($0) }
         
         NSLayoutConstraint.activate([
             stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 16),
-            bannerImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
-
+            stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            logoView.trailingAnchor.constraint(equalTo: stack.trailingAnchor)
+            
         ])
 
     }
@@ -99,7 +106,7 @@ class DetailViewController: UIViewController {
     func bind() {
         guard let model = model else { return }
         titleLabel.text = model.title
-        bannerImageView.image = model.bannerImage
+        logoView = model.logo
         descriptionLabel.text = model.description
     }
 }

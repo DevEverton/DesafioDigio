@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		504C621C27D050BE00480647 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504C621B27D050BE00480647 /* ProductDetail.swift */; };
 		507F181827CEC83B008B8D29 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507F181727CEC83B008B8D29 /* DetailViewController.swift */; };
 		50B7934E27C96B9500C38F42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7934D27C96B9500C38F42 /* AppDelegate.swift */; };
 		50B7935227C96B9500C38F42 /* ProductsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B7935127C96B9500C38F42 /* ProductsListViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		504C621B27D050BE00480647 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 		507F181727CEC83B008B8D29 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		50B7934A27C96B9500C38F42 /* DesafioDigio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioDigio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B7934D27C96B9500C38F42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				50FDBA9D27CC0ACE00DFD554 /* SpotlightScrollerComponent.swift */,
 				50FDBA9F27CC21ED00DFD554 /* ProductsScrollerComponent.swift */,
 				507F181727CEC83B008B8D29 /* DetailViewController.swift */,
+				504C621B27D050BE00480647 /* ProductDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				50B7935227C96B9500C38F42 /* ProductsListViewController.swift in Sources */,
 				50B7934E27C96B9500C38F42 /* AppDelegate.swift in Sources */,
 				50B7938C27C972D500C38F42 /* Products.swift in Sources */,
+				504C621C27D050BE00480647 /* ProductDetail.swift in Sources */,
 				50B7938627C96FA000C38F42 /* DGErrors.swift in Sources */,
 				50FDBAA027CC21ED00DFD554 /* ProductsScrollerComponent.swift in Sources */,
 				50FDBA9C27CC05F700DFD554 /* UIView+Extensions.swift in Sources */,

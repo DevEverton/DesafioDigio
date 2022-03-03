@@ -7,8 +7,11 @@
 
 import UIKit
 
-class ProductsScrollerComponent: UIView {
+class ProductsScrollerComponent: UIView, NavigationControllerInjected {
     typealias Model = CashSectionModel
+    
+    private var logos = [UIView]()
+    private var products = [Product]()
     
     var model: Model? {
         didSet {
@@ -62,9 +65,32 @@ class ProductsScrollerComponent: UIView {
     
     func bind() {
         guard let model = model else { return }
+        var view = UIView()
+        
         for product in model.products {
-            stackView.addArrangedSubview(createBannerImage(withUrl: product.imageURL))
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+            view = createBannerImage(withUrl: product.imageURL)
+            view.addGestureRecognizer(tapGesture)
+            stackView.addArrangedSubview(view)
+            logos.append(view)
+            products.append(product)
         }
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+
+        let vc = ProductDetail()
+        var product = Product(name: "", imageURL: "", description: "")
+        var view = UIView()
+        
+        for index in 0..<logos.count {
+            if logos[index] == sender.view {
+                product = products[index]
+                view = logos[index]
+            }
+        }
+        vc.model = .init(title: product.name, logo: view, description: product.description)
+        navController.pushViewController(vc, animated: true)
     }
     
     private func createBannerImage(withUrl url: String) -> UIView {
@@ -94,6 +120,7 @@ class ProductsScrollerComponent: UIView {
         containerView.layer.cornerRadius = 12
         
         containerView.addShadowWithRoundedCorners(of: 12)
+        containerView.isUserInteractionEnabled = true
         
         return containerView
     }
