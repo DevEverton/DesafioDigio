@@ -26,7 +26,7 @@ enum EndPoint {
         case .products:
             return "/sandbox/products"
         case .mock404:
-            return "/mock404"
+            return "/sandbox/productsxxx"
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  PeoductsListViewModel.swift
+//  ProductsListViewModel.swift
 //  DesafioDigio
 //
 //  Created by Everton Carneiro on 27/02/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PeoductsListViewModel {
+class ProductsListViewModel {
     
     let service: ProductsServiceProtocol
     private(set) var spotlightProducts = [SpotLightProduct]()

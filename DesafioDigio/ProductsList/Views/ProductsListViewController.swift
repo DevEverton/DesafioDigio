@@ -59,7 +59,7 @@ class ProductsListViewController: UIViewController, NavigationControllerInjected
     }()
     
     
-    var viewModel: PeoductsListViewModel!
+    var viewModel: ProductsListViewModel!
 
     
     init() {
@@ -81,7 +81,7 @@ class ProductsListViewController: UIViewController, NavigationControllerInjected
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = PeoductsListViewModel()
+        viewModel = ProductsListViewModel()
                 
         loadData()
         setupViews()

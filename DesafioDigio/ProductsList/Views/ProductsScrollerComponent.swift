@@ -69,7 +69,7 @@ class ProductsScrollerComponent: UIView, NavigationControllerInjected {
         
         for product in model.products {
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-            view = createBannerImage(withUrl: product.imageURL)
+            view = createLogoImage(withUrl: product.imageURL)
             view.addGestureRecognizer(tapGesture)
             stackView.addArrangedSubview(view)
             logos.append(view)
@@ -87,11 +87,11 @@ class ProductsScrollerComponent: UIView, NavigationControllerInjected {
                 product = products[index]
             }
         }
-        vc.model = .init(title: product.name, logo: createBannerImage(withUrl: product.imageURL), description: product.description)
+        vc.model = .init(title: product.name, logo: createLogoImage(withUrl: product.imageURL), description: product.description)
         navController.pushViewController(vc, animated: true)
     }
     
-    private func createBannerImage(withUrl url: String) -> UIView {
+    private func createLogoImage(withUrl url: String) -> UIView {
         let containerView = UIView()
         let imageView = UIImageView()
         addSubview(containerView)
