@@ -26,7 +26,7 @@ class ProductDetail: UIViewController {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(named: "digioBlue")!
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -64,6 +64,7 @@ class ProductDetail: UIViewController {
         stackview.axis = .horizontal
         stackview.distribution = .fill
         stackview.spacing = 12
+        stackview.alignment = .firstBaseline
         stackview.translatesAutoresizingMaskIntoConstraints = false
         return stackview
     }()
@@ -90,14 +91,14 @@ class ProductDetail: UIViewController {
     
     func setupViews() {
         view.addSubview(stack)
-        stack.addArrangedSubview(titleLabel)
-        [logoView, titleLabel, descriptionLabel].forEach { stack.addArrangedSubview($0) }
         
+        [logoView, titleLabel].forEach { horizontalStack.addArrangedSubview($0) }
+        [horizontalStack, descriptionLabel].forEach { stack.addArrangedSubview($0) }
+
         NSLayoutConstraint.activate([
             stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            logoView.trailingAnchor.constraint(equalTo: stack.trailingAnchor)
+            stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
             
         ])
 

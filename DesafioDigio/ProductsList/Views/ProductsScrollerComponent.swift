@@ -55,7 +55,7 @@ class ProductsScrollerComponent: UIView, NavigationControllerInjected {
         
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 8),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -32),
             stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
             
@@ -81,15 +81,13 @@ class ProductsScrollerComponent: UIView, NavigationControllerInjected {
 
         let vc = ProductDetail()
         var product = Product(name: "", imageURL: "", description: "")
-        var view = UIView()
         
         for index in 0..<logos.count {
             if logos[index] == sender.view {
                 product = products[index]
-                view = logos[index]
             }
         }
-        vc.model = .init(title: product.name, logo: view, description: product.description)
+        vc.model = .init(title: product.name, logo: createBannerImage(withUrl: product.imageURL), description: product.description)
         navController.pushViewController(vc, animated: true)
     }
     

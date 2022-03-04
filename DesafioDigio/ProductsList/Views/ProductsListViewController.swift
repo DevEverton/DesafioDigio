@@ -107,7 +107,6 @@ class ProductsListViewController: UIViewController, NavigationControllerInjected
                     self.present(alert, animated: true)
                 }
             }
-            
         }
     }
     
